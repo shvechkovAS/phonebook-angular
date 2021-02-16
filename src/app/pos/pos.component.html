@@ -27,21 +27,21 @@
     <label for="salaryPos">Заработная плата</label>
     <input id="salaryPos" type="number" step="0.01" class="form-control" name="salaryPos" [(ngModel)]="pos.salary" placeholder="Заработная плата"/>
     <br>
-    <button type="button" name="buttonAddPos" onClick="history.go(0);" (click)="setNewPosition(pos)">Добавить должность</button>
+    <button type="button" name="buttonAddPos" (click)="setNewPosition(pos)">Добавить должность</button>
     <button type="button" name="buttonFindPosByName" (click)="findPosByName(pos.namePosition)">Поиск по наименованию</button>
     <button type="button" name="buttonFindAll" (click)="getPossTbl()">Все должности</button>
     <br>
     <label for="idUpdate">Идентификатор для изменения/удаления</label>
     <input type="number" id="idUpdate" class="form-control" name="idUpdate" [(ngModel)]="id" placeholder="Идентификатор"/>
     <br>
-    <button type="button" name="buttonUpdatePos" onClick="history.go(0);" (click)="updatePosition(id, pos)">Обновить должность</button>
-    <button type="button" name="buttonRemovePos" onClick="history.go(0);" (click)="removePosition(id)">Удалить должность</button>
+    <button type="button" name="buttonUpdatePos" (click)="updatePosition(id, pos)">Обновить должность</button>
+    <button type="button" name="buttonRemovePos" (click)="removePosition(id)">Удалить должность</button>
     <br>
     <br>
     <label for="idEmp">Идентификатор для добавления/удаления сотрудника</label>
     <input type="number" id="idEmp" class="form-control" name="idEmp" [(ngModel)]="idEmp" placeholder="Идентификатор"/>
     <br>
-    <button type="button" name="buttonAddEmpToPos" onClick="history.go(0);" (click)="setEmpToPosition(idEmp, id, pos)">Добавить должность сотруднику</button>
-    <button type="button" name="buttonRemoveEmpFromPos" onClick="history.go(0);" (click)="removeEmpFromPosition(idEmp, id)">Удалить должность у сотрудника</button>
+    <button type="button" name="buttonAddEmpToPos" (click)="setEmpToPosition(idEmp, id, pos)">Добавить должность сотруднику</button>
+    <button type="button" name="buttonRemoveEmpFromPos" (click)="removeEmpFromPosition(idEmp, id)">Удалить должность у сотрудника</button>
   </div>
 </div>

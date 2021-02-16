@@ -37,18 +37,21 @@ export class EmpComponent implements OnInit {
                     (data: Emp) => {this.emp=data; this.done=true;},
                     error => console.log(error)
                     );
+                    this.getEmpsTbl();
   }
 
   removeEmployee(id: number){
     this.phoneService.removeEmp(id).subscribe(
                     error => console.log(error)
                     );
+                    this.getEmpsTbl();
   }
 
   updateEmployee(empId:number, emp: Emp){
     this.phoneService.updateEmp(empId, emp).subscribe(
                       error => console.log(error)
                   );
+                  this.getEmpsTbl();
   }
 
   findEmpsBySecondName(secondName:string){
@@ -62,24 +65,28 @@ export class EmpComponent implements OnInit {
     this.phoneService.setDepToEmp(depId, empId, emp).subscribe(
                       error => console.log(error)
                   );
+                  this.getEmpsTbl();
   }
 
   removeDepFromEmployee(depId:number, empId:number){
     this.phoneService.removeDepFromEmp(depId, empId).subscribe(
                       error => console.log(error)
                   );
+                  this.getEmpsTbl();
   }
 
   setOrgToEmployee(orgId:number, empId:number, emp: Emp){
     this.phoneService.setOrgToEmp(orgId, empId, emp).subscribe(
                       error => console.log(error)
                   );
+                  this.getEmpsTbl();
   }
 
   removeOrgFromEmployee(orgId:number, empId:number){
     this.phoneService.removeOrgFromEmp(orgId, empId).subscribe(
                       error => console.log(error)
                   );
+                  this.getEmpsTbl();
   }
 }
 

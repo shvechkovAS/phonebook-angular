@@ -37,18 +37,21 @@ export class PosComponent implements OnInit {
                     (data: Pos) => {this.pos=data; this.done=true;},
                     error => console.log(error)
                     );
+                    this.getPossTbl();
   }
 
   removePosition(id: number){
     this.phoneService.removePos(id).subscribe(
                     error => console.log(error)
                     );
+                    this.getPossTbl();
   }
 
   updatePosition(posId:number, pos: Pos){
     this.phoneService.updatePos(posId, pos).subscribe(
                       error => console.log(error)
                   );
+                  this.getPossTbl();
   }
 
   findPosByName(name:string){
@@ -62,12 +65,14 @@ export class PosComponent implements OnInit {
     this.phoneService.setEmpToPos(empId, id, pos).subscribe(
                       error => console.log(error)
                   );
+                  this.getPossTbl();
   }
 
   removeEmpFromPosition(empId:number, id:number){
     this.phoneService.removeEmpFromPos(empId, id).subscribe(
                       error => console.log(error)
                   );
+                  this.getPossTbl();
   }
 }
 

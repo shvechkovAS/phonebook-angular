@@ -15,7 +15,7 @@ export class OrgComponent implements OnInit {
   inn:string = "";
   org: Org = new Org();
   done: boolean = false;
-  
+
   constructor(
     private phoneService: PhoneService
   ) { }
@@ -50,18 +50,21 @@ export class OrgComponent implements OnInit {
                     (data: Org) => {this.org=data; this.done=true;},
                     error => console.log(error)
                   );
+                  this.getOrgsTbl();
   }
 
   removeOrganization(id:number){
     this.phoneService.removeOrg(id).subscribe(
                     error => console.log(error)
                   );
+                  this.getOrgsTbl();
   }
 
   updateOrganization(id:number,org: Org){
     this.phoneService.updateOrg(id, org).subscribe(
                       error => console.log(error)
                   );
+                  this.getOrgsTbl();
   }
 }
 

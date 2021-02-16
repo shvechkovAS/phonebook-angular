@@ -18,6 +18,10 @@ export class DepComponent implements OnInit {
   idFil: number = 0;
   done:boolean = false;
 
+  ngOnInit(): void {
+    this.getDepsTbl();
+  }
+
   constructor(private phoneService: PhoneService) { }
 
   getDepsTbl() {
@@ -32,18 +36,21 @@ export class DepComponent implements OnInit {
                     (data: Dep) => {this.dep=data; this.done=true;},
                     error => console.log(error)
                     );
+                    this.getDepsTbl();
   }
 
   removeDepartment(id: number){
     this.phoneService.removeDep(id).subscribe(
                     error => console.log(error)
                     );
+                    this.getDepsTbl();
   }
 
   updateDepartment(depId:number, dep: Dep){
     this.phoneService.updateDep(depId, dep).subscribe(
                       error => console.log(error)
                   );
+                  this.getDepsTbl();
   }
 
   findDepartmentByNameDep(nameDep:string){
@@ -57,28 +64,28 @@ export class DepComponent implements OnInit {
     this.phoneService.setOrgToDep(orgId, depId, dep).subscribe(
                       error => console.log(error)
                   );
+                  this.getDepsTbl();
   }
 
   removeOrgFromDepartment(orgId:number, depId:number){
     this.phoneService.removeOrgFromDep(orgId, depId).subscribe(
                       error => console.log(error)
                   );
+                  this.getDepsTbl();
   }
 
   setFilToDepartment(filId:number, depId:number, dep: Dep){
     this.phoneService.setFilToDep(filId, depId, dep).subscribe(
                       error => console.log(error)
                   );
+                  this.getDepsTbl();
   }
 
   removeFilFromDepartment(filId:number, depId:number){
     this.phoneService.removeFilFromDep(filId, depId).subscribe(
                       error => console.log(error)
                   );
-  }
-
-  ngOnInit(): void {
-    this.getDepsTbl();
+                  this.getDepsTbl();
   }
 
 }

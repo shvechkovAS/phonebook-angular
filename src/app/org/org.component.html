@@ -35,7 +35,7 @@
     <label for="address">Адрес</label>
     <input id="address" class="form-control" name="address" [(ngModel)]="org.address" placeholder="Адрес"/>
     <br>
-    <button type="button" name="buttonAddOrg" onClick="history.go(0);" (click)="setNewOrganization(org)">Добавить организацию</button>
+    <button type="button" name="buttonAddOrg" (click)="setNewOrganization(org)">Добавить организацию</button>
     <button class="find" type="button" name="buttonFindByName" (click)="findOrganizationByNameOrg(org.nameOrg)">Поиск по наименованию</button>
     <button type="button" name="buttonFindByInn" (click)="findOrganizationByInn(org.inn)">Поиск по ИНН</button>
     <button type="button" name="buttonFindByInn" (click)="getOrgsTbl()">Все организации</button>
@@ -43,6 +43,6 @@
     <label for="idUpdate">Идентификатор для изменения/удаления</label>
     <input id="idUpdate" class="form-control" name="idUpdate" [(ngModel)]="id" placeholder="Идентификатор"/>
     <br>
-    <button type="button" name="buttonUpdateOrg" onClick="history.go(0);" (click)="updateOrganization(id, org)">Изменить организацию</button>
-    <button type="button" name="buttonDeleteOrg" onClick="history.go(0);" (click)="removeOrganization(id)">Удалить организацию</button>
+    <button type="button" name="buttonUpdateOrg" (click)="updateOrganization(id, org)">Изменить организацию</button>
+    <button type="button" name="buttonDeleteOrg" (click)="removeOrganization(id)">Удалить организацию</button>
 </div>

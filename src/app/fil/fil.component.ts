@@ -36,18 +36,21 @@ export class FilComponent implements OnInit {
                     (data: Fil) => {this.fil=data; this.done=true;},
                     error => console.log(error)
                     );
+                    this.getFilsTbl();
   }
 
   removeFilial(id: number){
     this.phoneService.removeFil(id).subscribe(
                     error => console.log(error)
                     );
+                    this.getFilsTbl();
   }
 
   updateFilial(filId:number, fil: Fil){
     this.phoneService.updateFil(filId, fil).subscribe(
                       error => console.log(error)
                   );
+                  this.getFilsTbl();
   }
 
   findFilialByNameFil(nameFil:string){
@@ -61,12 +64,14 @@ export class FilComponent implements OnInit {
     this.phoneService.setOrgToFil(orgId, filId, fil).subscribe(
                       error => console.log(error)
                   );
+                  this.getFilsTbl();
   }
 
   removeOrgFromFilial(orgId:number, filId:number){
     this.phoneService.removeOrgFromFil(orgId, filId).subscribe(
                       error => console.log(error)
                   );
+                  this.getFilsTbl();
   }
 }
 

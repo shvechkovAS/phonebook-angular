@@ -63,26 +63,26 @@
     <label for="female">Ж</label>
     <input type="radio" id="female" name="gender" value="1" [(ngModel)]="emp.gender">
     <br>
-    <button type="button" name="buttonAddEmp" onClick="history.go(0);" (click)="setNewEmployee(emp)">Добавить сотрудника</button>
+    <button type="button" name="buttonAddEmp" (click)="setNewEmployee(emp)">Добавить сотрудника</button>
     <button type="button" name="buttonFindEmpBySecondName" (click)="findEmpsBySecondName(emp.secondName)">Поиск по фамилии</button>
     <button type="button" name="buttonFindAll" (click)="getEmpsTbl()">Все сотрудники</button>
     <br>
     <label for="idUpdate">Идентификатор для изменения/удаления</label>
     <input type="number" id="idUpdate" class="form-control" name="idUpdate" [(ngModel)]="id" placeholder="Идентификатор"/>
     <br>
-    <button type="button" name="buttonUpdateEmp" onClick="history.go(0);" (click)="updateEmployee(id, emp)">Обновить данные о сотруднике</button>
-    <button type="button" name="buttonRemoveEmp" onClick="history.go(0);" (click)="removeEmployee(id)">Удалить сотрудника</button>
+    <button type="button" name="buttonUpdateEmp" (click)="updateEmployee(id, emp)">Обновить данные о сотруднике</button>
+    <button type="button" name="buttonRemoveEmp" (click)="removeEmployee(id)">Удалить сотрудника</button>
     <br>
     <label for="nameDep">ИД организации для добавления</label>
     <input type="number" id="idOrg" class="form-control" name="idOrg" [(ngModel)]="idOrg" placeholder="ИД организации"/>
     <br>
-    <button type="button" name="buttonAddDepToEmp" onClick="history.go(0);" (click)="setOrgToEmployee(idOrg, id, emp)">Добавить сотрудника в организацию</button>
-    <button type="button" name="buttonRemoveDepFromEmp" onClick="history.go(0);" (click)="removeOrgFromEmployee(idOrg, id)">Удалить сотрудника из организации</button>
+    <button type="button" name="buttonAddDepToEmp" (click)="setOrgToEmployee(idOrg, id, emp)">Добавить сотрудника в организацию</button>
+    <button type="button" name="buttonRemoveDepFromEmp" (click)="removeOrgFromEmployee(idOrg, id)">Удалить сотрудника из организации</button>
     <br>
     <label for="nameDep">ИД отдела для добавления</label>
     <input type="number" id="idDep" class="form-control" name="idDep" [(ngModel)]="idDep" placeholder="ИД отдела"/>
     <br>
-    <button type="button" name="buttonAddOrgToEmp" onClick="history.go(0);" (click)="setDepToEmployee(idDep, id, emp)">Добавить сотрудника в отдел</button>
-    <button type="button" name="buttonRemoveOrgFromEmp" onClick="history.go(0);" (click)="removeDepFromEmployee(idDep, id)">Удалить сотрудника из отдела</button>
+    <button type="button" name="buttonAddOrgToEmp" (click)="setDepToEmployee(idDep, id, emp)">Добавить сотрудника в отдел</button>
+    <button type="button" name="buttonRemoveOrgFromEmp" (click)="removeDepFromEmployee(idDep, id)">Удалить сотрудника из отдела</button>
   </div>
 </div>
